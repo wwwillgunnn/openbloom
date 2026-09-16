@@ -12,7 +12,7 @@
   const goDesigner = () => (view = 'designer')
 </script>
 
-<main class="min-h-[100svh] overflow-hidden">
+<main class="min-h-svh overflow-hidden">
   {#if view === 'home'}
     <HomePage onOpenGarden={goGarden} onOpenDesigner={goDesigner} />
   {:else if view === 'garden'}

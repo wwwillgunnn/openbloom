@@ -12,7 +12,7 @@
 </script>
 
 <section
-  class="relative grid min-h-[100svh] w-full place-items-center overflow-hidden py-16"
+  class="relative grid min-h-svh w-full place-items-center overflow-hidden py-16"
   aria-labelledby="welcome-title"
 >
   <video

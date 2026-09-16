@@ -142,7 +142,7 @@
 	style:scrollbar-width="none"
 >
 	<div
-		class="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border-neutral-700 border-2 pb-2 px-4 {className}"
+		class="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border-dock-line border-2 pb-2 px-4 {className}"
 		style:height="{panelHeight}px"
 		role="toolbar"
 		tabindex="-1"
@@ -168,7 +168,7 @@
 				}}
 				style:width="{sizes[i] ?? baseItemSize}px"
 				style:height="{sizes[i] ?? baseItemSize}px"
-				class="relative inline-flex items-center justify-center rounded-full bg-[#120F17] border-neutral-700 border-2 shadow-md cursor-pointer {item.class ?? ''}"
+				class="relative inline-flex items-center justify-center rounded-full bg-dock border-dock-line border-2 shadow-md cursor-pointer {item.class ?? ''}"
 				tabindex="0"
 				role="button"
 				aria-haspopup="true"
@@ -192,7 +192,7 @@
 				{#if labelVisible[i]}
 					<div
 						role="tooltip"
-						class="absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border border-neutral-700 bg-[#120F17] px-2 py-0.5 text-xs text-white"
+						class="absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border border-dock-line bg-dock-tooltip px-2 py-0.5 text-xs text-white"
 						style:transform="translateX(-50%) translateY(-10px)"
 						style:opacity="1"
 						style:transition="opacity 200ms ease, transform 200ms ease"

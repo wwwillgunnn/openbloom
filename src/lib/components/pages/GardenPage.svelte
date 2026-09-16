@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Dock from '$lib/components/svelte-bits/Dock.svelte'
+  import AppDock from '$lib/components/AppDock.svelte'
 
   type Props = {
     onGoHome: () => void
@@ -52,24 +52,5 @@
     </div>
   </div>
 
-  <div class="absolute inset-x-0 bottom-6 z-30 flex justify-center">
-    <Dock
-      items={[
-        { label: 'Welcome', icon: homeIcon, onClick: onGoHome },
-        { label: 'Designer', icon: designIcon, onClick: onOpenDesigner },
-      ]}
-    />
-  </div>
+  <AppDock onGoHome={onGoHome} onGoDesigner={onOpenDesigner} />
 </section>
-
-{#snippet homeIcon()}
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h12a1 1 0 001-1V10" />
-  </svg>
-{/snippet}
-
-{#snippet designIcon()}
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 118-9M12 21a9 9 0 01-1-18m1 18a9 9 0 001-18 9 9 0 01-1 0m2-11a3 3 0 11-6 0m2 8h.01" />
-  </svg>
-{/snippet}

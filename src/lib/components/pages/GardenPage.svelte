@@ -4,17 +4,29 @@
   type Props = {
     onGoHome: () => void
     onOpenDesigner: () => void
+    plantedBlooms: { hue: number; scale: number }[]
   }
 
-  let { onGoHome, onOpenDesigner }: Props = $props()
+  let { onGoHome, onOpenDesigner, plantedBlooms }: Props = $props()
 
-  const plantedBlooms = [
+  const gardenBlooms = [
     { left: '16%', top: '66%', scale: 0.66, hue: 342, delay: '-1.3s' },
     { left: '31%', top: '72%', scale: 0.54, hue: 42, delay: '-0.2s' },
     { left: '60%', top: '69%', scale: 0.7, hue: 206, delay: '-0.8s' },
     { left: '76%', top: '61%', scale: 0.58, hue: 312, delay: '-1.8s' },
     { left: '86%', top: '77%', scale: 0.5, hue: 18, delay: '-0.6s' },
   ]
+  const plantingSpots = ['22%', '40%', '52%', '69%', '82%']
+  const flowers = $derived([
+    ...gardenBlooms,
+    ...plantedBlooms.map((bloom, index) => ({
+      left: plantingSpots[index % plantingSpots.length],
+      top: `${58 + (index % 3) * 5}%`,
+      scale: bloom.scale * 0.58,
+      hue: bloom.hue,
+      delay: `${-(index % 5) * 0.4}s`,
+    })),
+  ])
 </script>
 
 <section
@@ -32,7 +44,7 @@
       aria-hidden="true"
     ></div>
 
-    {#each plantedBlooms as bloom}
+    {#each flowers as bloom}
       <div
         class="absolute h-[126px] w-[58px] origin-bottom animate-flower-sway [transform:translate(-50%,-100%)_scale(var(--bloom-scale))]"
         style={`left: ${bloom.left}; top: ${bloom.top}; --petal-hue: ${bloom.hue}; --bloom-scale: ${bloom.scale}; animation-delay: ${bloom.delay};`}

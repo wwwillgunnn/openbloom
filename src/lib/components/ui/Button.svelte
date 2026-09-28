@@ -3,7 +3,7 @@
   import { cn } from '$lib/utils'
 
   type Props = {
-    variant?: 'primary' | 'secondary' | 'quiet'
+    variant?: 'primary' | 'secondary' | 'quiet' | 'bloom'
     class?: string
     type?: 'button' | 'submit' | 'reset'
     onclick?: () => void
@@ -26,6 +26,8 @@
       'text-rose-ink bg-white/75 border border-rose-ink/16 shadow-[0_12px_24px_rgba(74,31,47,0.14)] backdrop-blur',
     quiet:
       'text-rose-ink/80 bg-white/70 border border-rose-ink/12 min-w-[92px]',
+    bloom:
+      'text-[#E7ECE8] bg-[#0B1411] border border-line shadow-none hover:text-white hover:border-rose-soft hover:bg-gradient-to-r hover:from-rose-soft hover:to-rose-deep hover:shadow-[0_0_24px_rgba(169,79,110,0.24)]',
   }
 </script>
 

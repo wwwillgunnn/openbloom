@@ -65,7 +65,7 @@
 </script>
 
 <section
-  class={`relative min-h-55 flex-1 overflow-hidden rounded-lg border border-line bg-pine-800 shadow-[var(--shadow)] backdrop-blur-[18px] ${className}`}
+  class={`relative min-h-55 flex-1 overflow-hidden rounded-lg border border-line bg-surface-strong shadow-(--shadow) backdrop-blur-[18px] ${className}`}
   aria-label="Camera preview"
 >
   <video bind:this={videoElement} autoplay muted playsinline class="block h-full w-full object-cover -scale-x-100"></video>
